@@ -10,14 +10,18 @@ const   clientIntents =
     ]
 };
 const   client = new discord.Client(clientIntents);
-//verification du client prêt à se connecter en affichant le nom du bot
+//connection du client via token
+
+//verification que le client soit en ligne en affichant le nom du bot
 client.on("ready", (cl) => 
 {
     console.log(`✅ ${cl.user.tag} is online`);
 });
+//test recup message 
 client.on("messageCreate", (msg) =>
 {
-    console.log(msg);
+    if(msg.content == "salut le bot")
+        msg.reply("Salut, je suis un noob iron 4 pour l'instant, tu veux koa?");
+    else if(msg.content == "bot de merde")
+        msg.reply(":(");
 });
-client
-//connection du client via token

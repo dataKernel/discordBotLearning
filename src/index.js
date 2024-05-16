@@ -17,11 +17,21 @@ client.on("ready", (cl) =>
 {
     console.log(`✅ ${cl.user.tag} is online`);
 });
-//test recup message 
+//création tableau associatif avec des commandes de bases
+const   arrayCommands =
+{
+    "!everyone": "@everyonne Ecoutez moi c'est important.. euh en fait, j'ai oublié :/",
+    "!info_bot": `Bot_id: (en cours.. some bugs)`,
+    "!version": `Bot_version: ${discord.version}`,
+    "!bot de merde" : ":(",
+    "!race": "Protoss are OP, Zergs are brainDead, Humans are unskilled"
+}
+
 client.on("messageCreate", (msg) =>
 {
-    if(msg.content == "salut le bot")
-        msg.reply("Salut, je suis un noob iron 4 pour l'instant, tu veux koa?");
-    else if(msg.content == "bot de merde")
-        msg.reply(":(");
+    for(var key in arrayCommands)
+    {
+        if(msg.content == key)
+            msg.reply(arrayCommands[key]);
+    }
 });

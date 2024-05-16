@@ -1,0 +1,23 @@
+{
+  "name": "discordbotlearning",
+  "version": "1.0.0",
+  "description": "a JS bot for education purpose",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "test",
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dataKernel/discordBotLearning.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dataKernel/discordBotLearning/issues"
+  },
+  "homepage": "https://github.com/dataKernel/discordBotLearning#readme",
+  "dependencies": {
+    "discord.js": "^14.14.1"
+  }
+}

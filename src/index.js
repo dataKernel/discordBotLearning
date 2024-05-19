@@ -26,7 +26,6 @@ const   arrayCommands =
     "!bot de merde" : ":(",
     "!race": "Protoss are OP, Zergs are brainDead, Humans are unskilled"
 }
-
 client.on("messageCreate", (msg) =>
 {
     for(var key in arrayCommands)

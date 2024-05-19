@@ -28,6 +28,9 @@ const   arrayCommands =
 }
 client.on("messageCreate", (msg) =>
 {
+    //secure that the bot doesn't reply to himeself recursively
+    if(msg.author.bot)
+        return ;
     for(var key in arrayCommands)
     {
         if(msg.content == key)

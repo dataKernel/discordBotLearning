@@ -1,3 +1,5 @@
+require("dotenv").config;
+
 const   discord = require("discord.js");
 const   clientIntents =
 {
@@ -9,9 +11,10 @@ const   clientIntents =
         discord.IntentsBitField.Flags.MessageContent
     ]
 };
+
 const   client = new discord.Client(clientIntents);
 //connection du client via token
-
+client.login(process.env.TOKEN);
 //verification que le client soit en ligne en affichant le nom du bot
 client.on("ready", (cl) => 
 {
@@ -20,7 +23,8 @@ client.on("ready", (cl) =>
 //création tableau associatif avec des commandes de bases
 const   arrayCommands =
 {
-    "!everyone": "@everyonne Ecoutez moi c'est important.. euh en fait, j'ai oublié :/",
+    "!alive" : "oui tout fonctionne je suis en vie",
+    "!everyone": "@everyone Ecoutez moi c'est important.. euh en fait, j'ai oublié :/ (calixe changed)",
     "!info_bot": `Bot_id: (en cours.. some bugs)`,
     "!version": `Bot_version: ${discord.version}`,
     "!bot de merde" : ":(",

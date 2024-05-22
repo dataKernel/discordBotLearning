@@ -1,4 +1,4 @@
-require("dotenv").config;
+require("dotenv").config();
 
 const   discord = require("discord.js");
 const   clientIntents =
@@ -24,6 +24,7 @@ client.on("ready", (cl) =>
 const   arrayCommands =
 {
     "!alive" : "oui tout fonctionne je suis en vie",
+    "!dead" : "laen ne pense qu'a tuer f2 a click toss...",
     "!everyone": "@everyone Ecoutez moi c'est important.. euh en fait, j'ai oublié :/ (calixe changed)",
     "!info_bot": `Bot_id: (en cours.. some bugs)`,
     "!version": `Bot_version: ${discord.version}`,

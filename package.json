@@ -4,15 +4,15 @@
   "description": "a JS bot for education purpose",
   "main": "src/index.js",
   "scripts": {
-    "test": "test",
-    "start": "node index.js"
+    "start": "nodemon src/index.js",
+    "register_cmd": "node src/register-command.js"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/dataKernel/discordBotLearning.git"
   },
-  "author": "",
-  "license": "ISC",
+  "author": "data",
+  "license": "x",
   "bugs": {
     "url": "https://github.com/dataKernel/discordBotLearning/issues"
   },

@@ -17,6 +17,7 @@ const   rest = new REST_CLASS({version: '10'}).setToken(process.env.TOKEN);
 //fonction qui effectue l'enregistrement des commandes 
 async function register_cmd()
 {
+    
     console.log(process.env);
     try 
     {

@@ -42,3 +42,10 @@ client.on("messageCreate", (msg) =>
             msg.reply(arrayCommands[key]);
     }
 });
+//execution des commandes slash
+client.on('interactionCreate', (interaction) =>
+{
+    if(!interaction.isChatInputCommand())
+        return;
+    console.log(interaction.commandName);
+});

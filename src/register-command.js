@@ -8,11 +8,11 @@ const   routes = discord.Routes;
 const   commands = 
 [
     {
-        name: "ma_premiere_slash_cmd",
-        description: "dire coucou"
+        name: "status",
+        description: "(desc)->indique le status du bot."
     }
 ];
-//loading rest API for the server
+//chargement de l'API REST 
 const   rest = new REST_CLASS({version: '10'}).setToken(process.env.TOKEN);
 //fonction qui effectue l'enregistrement des commandes 
 async function register_cmd()

@@ -17,15 +17,11 @@ const   rest = new REST_CLASS({version: '10'}).setToken(process.env.TOKEN);
 //fonction qui effectue l'enregistrement des commandes 
 async function register_cmd()
 {
-    
-    console.log(process.env);
     try 
     {
         console.log("Enregistrement des slash commandes...");
-        await rest.put(routes.applicationGuildCommand(process.env.CLIENT_ID, process.env.GUILD_ID),
-        {body: commands}
-    )
-    console.log("Enregistrement des commandes effectuées");
+        await rest.put(routes.applicationGuildCommands(process.env.CLIENT_ID, process.env.GUILD_ID), {body: commands});
+        console.log("Enregistrement des commandes effectuées");
     } 
     catch (error) 
     {

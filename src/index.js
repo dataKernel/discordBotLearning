@@ -12,12 +12,14 @@ const   clientIntents =
     ]
 };
 
+let     nameBot;
 const   client = new discord.Client(clientIntents);
 //connection du client via token
 client.login(process.env.TOKEN);
 //verification que le client soit en ligne en affichant le nom du bot
 client.on("ready", (cl) => 
 {
+    nameBot = cl.user.username;
     console.log(`✅ ${cl.user.tag} is online`);
 });
 //création tableau associatif avec des commandes de bases
@@ -47,5 +49,7 @@ client.on('interactionCreate', (interaction) =>
 {
     if(!interaction.isChatInputCommand())
         return;
-    console.log(interaction.commandName);
+
+    if(interaction.commandName == "status")
+        interaction.reply(`[CHECK INFOS BOT...]\n bot_name: ${nameBot}`);
 });

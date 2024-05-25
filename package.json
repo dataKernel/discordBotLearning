@@ -4,7 +4,7 @@
   "description": "a JS bot for education purpose",
   "main": "src/index.js",
   "scripts": {
-    "start": "nodemon src/index.js",
+    "launch": "nodemon src/index.js",
     "register_cmd": "node src/register-command.js"
   },
   "repository": {

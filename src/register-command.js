@@ -8,8 +8,8 @@ const   routes = discord.Routes;
 const   commands = 
 [
     {
-        name: "status",
-        description: "(desc)->indique le status du bot."
+        name: "01_status",
+        description: "(?): Indique le status du bot."
     }
 ];
 //chargement de l'API REST 

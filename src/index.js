@@ -13,14 +13,14 @@ const   clientIntents =
 };
 
 const   client = new discord.Client(clientIntents);
-//connection du client via token
+//cleint connection via token
 client.login(process.env.TOKEN);
-//verification que le client soit en ligne en affichant le nom du bot
+//checking the client is online by checking his online status
 client.on("ready", (cl) => 
 {
     console.log(`✅ ${cl.user.tag} is online`);
 });
-//création tableau associatif avec des commandes de bases
+//associative array to manage all basics static commands
 const   arrayCommands =
 {
     "!commands": "liste de commandes:\n !alive\n!dead\n!everyone\n!info_bot\n!version\n!race",
@@ -43,7 +43,7 @@ client.on("messageCreate", (msg) =>
             msg.reply(arrayCommands[key]);
     }
 });
-//execution des commandes slash
+//command slash exectuion
 client.on('interactionCreate', (interaction) =>
 {
     if(!interaction.isChatInputCommand())

@@ -8,8 +8,8 @@ const   routes = discord.Routes;
 const   commands = 
 [
     {
-        name: "01_status",
-        description: "(?): Indique le status du bot."
+        name: "test_cmd_slash",
+        description: "(?): Ceci est un test (en attente des args pour de vrais slash cmd)."
     }
 ];
 //chargement de l'API REST 

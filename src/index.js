@@ -49,6 +49,6 @@ client.on('interactionCreate', (interaction) =>
     if(!interaction.isChatInputCommand())
         return;
 
-    if(interaction.commandName == "01_status")
-        interaction.reply(`[CHECK INFOS BOT...]\n bot_name: ${nameBot}`);
+    if(interaction.commandName == "test_cmd_slash")
+        interaction.reply(`[CHECK INFOS BOT...]\n bot_name`);
 });

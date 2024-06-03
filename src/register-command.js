@@ -1,10 +1,10 @@
-//recup de nos variables d'env
+//get env variables
 require('dotenv').config();
-//recup de l'objet discord -- la base
+//get dispord object
 const   discord = require('discord.js');
 const   REST_CLASS = discord.REST; //c'est une classe
 const   routes = discord.Routes;
-//liste de toutes les commandes à pré-enregistrer
+//pre-register all slash commands
 const   commands = 
 [
     {
@@ -12,9 +12,9 @@ const   commands =
         description: "(?): Ceci est un test (en attente des args pour de vrais slash cmd)."
     }
 ];
-//chargement de l'API REST 
+//API REST loading
 const   rest = new REST_CLASS({version: '10'}).setToken(process.env.TOKEN);
-//fonction qui effectue l'enregistrement des commandes 
+//async function to register all the commands  
 async function register_cmd()
 {
     try 

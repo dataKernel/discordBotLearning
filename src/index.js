@@ -26,13 +26,3 @@ client.on("ready", (cl) =>
 
 //test des basic commandes
 features.read_commands(client);
-
-//command slash exectuion
-client.on('interactionCreate', (interaction) =>
-{
-    if(!interaction.isChatInputCommand())
-        return;
-
-    if(interaction.commandName == "test_cmd_slash")
-        interaction.reply(`[CHECK INFOS BOT...]\n bot_name`);
-});

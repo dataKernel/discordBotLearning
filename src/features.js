@@ -16,7 +16,8 @@ const arrayCommands =
 //function to generate all basic commands
 function    read_commands(client)
 {
-    client.on("messageCreate", (msg) => {
+    client.on("messageCreate", (msg) => 
+    {
         //secure that the bot doesn't reply to himeself recursively
         if (msg.author.bot)
             return;
@@ -27,5 +28,17 @@ function    read_commands(client)
     });
 }
 
+//function to generate all slash commands
+function    read_slash_commands(client)
+{
+    client.on('interactionCreate', (interaction) => 
+    {
+        if (!interaction.isChatInputCommand())
+            return;
+        if (interaction.commandName == "test_cmd_slash")
+            interaction.reply(`[CHECK INFOS BOT...]\n bot_name`);
+    });
+}
+
 //functionalities export with module
-module.exports = {read_commands};
+module.exports = {read_commands, read_slash_commands};

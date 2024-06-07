@@ -24,5 +24,7 @@ client.on("ready", (cl) =>
     console.log(`✅ ${cl.user.tag} is online`);
 });
 
-//test des basic commandes
+//reading all basic commands from array via features
 features.read_commands(client);
+//reading all slash commands from array via features
+features.read_slash_commands(client);

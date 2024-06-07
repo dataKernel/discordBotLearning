@@ -38,6 +38,7 @@ function    read_slash_commands(client)
         if (interaction.commandName == "test_cmd_slash")
             interaction.reply(`[CHECK INFOS BOT...]\n bot_name`);
     });
+    console.log("test");
 }
 
 //functionalities export with module

@@ -4,12 +4,31 @@ require('dotenv').config();
 const   discord = require('discord.js');
 const   REST_CLASS = discord.REST; //c'est une classe
 const   routes = discord.Routes;
+const   OptionTypes = discord.ApplicationCommandOptionType;
 //pre-register all slash commands
 const   commands = 
 [
     {
         name: "test_cmd_slash",
         description: "(?): Ceci est un test (en attente des args pour de vrais slash cmd)."
+    },
+    {
+        name: "add",
+        description: "(?): Add two numbers.",
+        options: [
+            {
+                name: "a",
+                description: "the first number.",
+                type: OptionTypes.Number,
+                required: true,
+            },
+            {
+                name: "b",
+                description: "the second number.",
+                type: OptionTypes.Number,
+                required: true,
+            }
+        ]
     }
 ];
 //API REST loading

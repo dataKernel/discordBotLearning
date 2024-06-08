@@ -2,7 +2,7 @@ require('discord.js');
 
 const   discord = require("discord.js");
 //associative array to manage all basics static commands
-const arrayCommands =
+const   arrayCommands =
 {
     "!commands": "liste de commandes:\n !alive\n!dead\n!everyone\n!info_bot\n!version\n!race",
     "!alive": "oui tout fonctionne je suis en vie",
@@ -37,6 +37,12 @@ function    read_slash_commands(client)
             return;
         if (interaction.commandName == "test_cmd_slash")
             interaction.reply(`[CHECK INFOS BOT...]\n bot_name`);
+        else if(interaction.commandName == "add")
+        {
+            const   a = interaction.options.get("a");
+            const   b = interaction.options.get("b");
+            interaction.reply(`test output(arg1): ${a}  test output(arg2): ${b}`);
+        }
     });
     console.log("test");
 }

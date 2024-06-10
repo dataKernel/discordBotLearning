@@ -44,7 +44,6 @@ function    read_slash_commands(client)
             interaction.reply(`test output(arg1): ${a}  test output(arg2): ${b}`);
         }
     });
-    console.log("test");
 }
 
 //functionalities export with module

@@ -39,9 +39,9 @@ function    read_slash_commands(client)
             interaction.reply(`[CHECK INFOS BOT...]\n bot_name`);
         else if(interaction.commandName == "add")
         {
-            const   a = interaction.options.get("a");
-            const   b = interaction.options.get("b");
-            interaction.reply(`test output(arg1): ${a.value}  test output(arg2): ${b.value}`);
+            const   a = interaction.options.get("a").value;
+            const   b = interaction.options.get("b").value;
+            interaction.reply(`(ADD_OP)-> Result: ${a + b}`);
         }
     });
 }

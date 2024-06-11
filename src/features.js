@@ -41,7 +41,7 @@ function    read_slash_commands(client)
         {
             const   a = interaction.options.get("a");
             const   b = interaction.options.get("b");
-            interaction.reply(`test output(arg1): ${a}  test output(arg2): ${b}`);
+            interaction.reply(`test output(arg1): ${a.value}  test output(arg2): ${b.value}`);
         }
     });
 }

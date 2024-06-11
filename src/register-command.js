@@ -20,6 +20,20 @@ const   commands =
                 name: "a",
                 description: "the first number.",
                 type: OptionTypes.Number,
+                choices:[
+                    {
+                        name: "10",
+                        value: 10
+                    },
+                    {
+                        name: "100",
+                        value: 100
+                    },
+                    {
+                        name: "1000",
+                        value: 1000
+                    }
+                ],
                 required: true,
             },
             {

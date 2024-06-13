@@ -43,6 +43,8 @@ function    read_slash_commands(client)
             const   b = interaction.options.get("b").value;
             interaction.reply(`(ADD_OP)-> Result: ${a + b}`);
         }
+        else if(interaction.commandName == "sub")
+            interaction.reply("substract function checked.. (dev still)..");
     });
 }
 

@@ -35,18 +35,44 @@ function    read_slash_commands(client)
     {
         if (!interaction.isChatInputCommand())
             return;
-        if (interaction.commandName == "test_cmd_slash")
-            interaction.reply(`[CHECK INFOS BOT...]\n bot_name`);
-        else if(interaction.commandName == "add")
+        // if (interaction.commandName == "test_cmd_slash")
+        //     interaction.reply(`[CHECK INFOS BOT...]\n bot_name`);
+        // else if(interaction.commandName == "add")
+        // {
+        //     const   a = interaction.options.get("a").value;
+        //     const   b = interaction.options.get("b").value;
+        //     interaction.reply(`(ADD_OP)-> Result: ${a + b}`);
+        // }
+        // else if(interaction.commandName == "sub")
+        //     interaction.reply("substract function checked.. (dev still)..");
+        switch(interaction.commandName)
         {
-            const   a = interaction.options.get("a").value;
-            const   b = interaction.options.get("b").value;
-            interaction.reply(`(ADD_OP)-> Result: ${a + b}`);
+            case "test_cmd_slash":
+                interaction.reply("refacto switch case done(test OK)");
+                break;
+            case "add":
+            {
+                const   a = interaction.options.get("a").value;
+                const   b = interaction.options.get("b").value;
+                interaction.reply(`(ADD_OP)-> Result: ${a + b}`);
+            }
+            break;
+            case "sub":
+            {
+                const   a = interaction.options.get("a").value;
+                const   b = interaction.options.get("b").value;
+                interaction.reply(`(SUB_OP) -> Result: ${a - b}`);
+            }
+            break;
+            default:
+                interaction.reply("error refacto switch (test KO)");
         }
-        else if(interaction.commandName == "sub")
-            interaction.reply("substract function checked.. (dev still)..");
     });
 }
 
 //functionalities export with module
 module.exports = {read_commands, read_slash_commands};
+
+
+
+

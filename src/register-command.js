@@ -20,19 +20,33 @@ const   commands =
                 name: "a",
                 description: "the first number.",
                 type: OptionTypes.Number,
-                required: true,
+                required: true
             },
             {
                 name: "b",
                 description: "the second number.",
                 type: OptionTypes.Number,
-                required: true,
+                required: true
             }
         ]
     },
     {
         name: "sub",
-        description: "(?): Substract two numbers."
+        description: "(?): Substract two numbers.",
+        options: [
+            {
+                name: "a",
+                description: "the first number",
+                type: OptionTypes.Number,
+                required: true
+            },
+            {
+                name: "b",
+                description: "the second number",
+                type: OptionTypes.Number,
+                required: true
+            }
+        ]
     }
 ];
 //API REST loading

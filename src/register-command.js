@@ -6,6 +6,32 @@ const   REST_CLASS = discord.REST; //c'est une classe
 const   routes = discord.Routes;
 const   OptionTypes = discord.ApplicationCommandOptionType;
 //pre-register all slash commands
+
+//factory functions for loading similar objects (operations)
+function    factory_operations(name, description)
+{
+    const   object =
+    {
+        name: name,
+        description: description,
+        options: [
+            {
+                name: "a",
+                description: "the first number",
+                type: OptionTypes.Number,
+                required: true
+            },
+            {
+                name: "b",
+                description: "the second number",
+                type: OptionTypes.Number,
+                required: true
+            }
+        ]
+    };
+    return(object);
+}
+
 const   commands = 
 [
     {

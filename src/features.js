@@ -54,7 +54,7 @@ function    read_slash_commands(client)
             {
                 const   a = interaction.options.get("a").value;
                 const   b = interaction.options.get("b").value;
-                interaction.reply(`(ADD_OP)-> Result: ${a + b}`);
+                interaction.reply(`(ADD_OP) -> Result: ${a + b}`);
             }
             break;
             case "sub":
@@ -62,6 +62,27 @@ function    read_slash_commands(client)
                 const   a = interaction.options.get("a").value;
                 const   b = interaction.options.get("b").value;
                 interaction.reply(`(SUB_OP) -> Result: ${a - b}`);
+            }
+            break;
+            case "mul":
+            {
+                const   a = interaction.options.get("a").value;
+                const   b = interaction.options.get("b").value;
+                interaction.reply(`(MUL_OP) -> Result: ${a * b}`);
+            }
+            break;
+            case "div":
+            {
+                const   a = interaction.options.get("a").value;
+                const   b = interaction.options.get("b").value;
+                interaction.reply(`(DIV_OP) -> Result: ${a / b}`);
+            }
+            break;
+            case "mod":
+            {
+                const   a = interaction.options.get("a").value;
+                const   b = interaction.options.get("b").value;
+                interaction.reply(`(MOD_OP) -> Result: ${a % b}`);
             }
             break;
             default:

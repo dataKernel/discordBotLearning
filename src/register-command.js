@@ -5,7 +5,6 @@ const   discord = require('discord.js');
 const   REST_CLASS = discord.REST; //c'est une classe
 const   routes = discord.Routes;
 const   OptionTypes = discord.ApplicationCommandOptionType;
-//pre-register all slash commands
 
 //factory functions for loading similar objects (operations)
 function    factory_operations(name, description)
@@ -31,7 +30,7 @@ function    factory_operations(name, description)
     };
     return(object);
 }
-
+//pre-register all slash commands
 const   commands = 
 [
     {

@@ -10,7 +10,8 @@ const   arrayCommands =
     "!everyone": "@everyone Ecoutez moi c'est important.. euh en fait, j'ai oublié :/ (calixe changed)",
     "!info_bot": `Bot_id: (en cours.. some bugs)`,
     "!version": `Bot_version: ${discord.version}`,
-    "!race": "Protoss are OP, Zergs are brainDead, Humans are unskilled"
+    "!race": "Protoss are OP, Zergs are brainDead, Humans are unskilled",
+    "!test": "je suis un test de ce qu'il y a de plus basique.. :/"
 };
 
 //function to generate all basic commands
@@ -35,46 +36,25 @@ function    read_slash_commands(client)
     {
         if (!interaction.isChatInputCommand())
             return;
+        const a = interaction.options.get("a").value;
+        const b = interaction.options.get("b").value;
         switch(interaction.commandName)
         {
-            case "test_cmd_slash":
-                interaction.reply("refacto switch case done(test OK)");
-                break;
             case "add":
-            {
-                const   a = interaction.options.get("a").value;
-                const   b = interaction.options.get("b").value;
                 interaction.reply(`(ADD_OP) -> Result: ${a + b}`);
-            }
-            break;
+                break;
             case "sub":
-            {
-                const   a = interaction.options.get("a").value;
-                const   b = interaction.options.get("b").value;
                 interaction.reply(`(SUB_OP) -> Result: ${a - b}`);
-            }
-            break;
+                break;
             case "mul":
-            {
-                const   a = interaction.options.get("a").value;
-                const   b = interaction.options.get("b").value;
                 interaction.reply(`(MUL_OP) -> Result: ${a * b}`);
-            }
-            break;
+                break;
             case "div":
-            {
-                const   a = interaction.options.get("a").value;
-                const   b = interaction.options.get("b").value;
                 interaction.reply(`(DIV_OP) -> Result: ${a / b}`);
-            }
-            break;
+                break;
             case "mod":
-            {
-                const   a = interaction.options.get("a").value;
-                const   b = interaction.options.get("b").value;
                 interaction.reply(`(MOD_OP) -> Result: ${a % b}`);
-            }
-            break;
+                break;
             default:
                 interaction.reply("error refacto switch (test KO)");
         }

@@ -33,10 +33,6 @@ function    factory_operations(name, description)
 //pre-register all slash commands
 const   commands = 
 [
-    {
-        name: "test_cmd_slash",
-        description: "(?): Ceci est un test (en attente des args pour de vrais slash cmd)."
-    },
     factory_operations("add", "(?): Add two numbers."),
     factory_operations("sub", "(?): Sub two numbers."),
     factory_operations("mul", "(?): Mul two numbers."),

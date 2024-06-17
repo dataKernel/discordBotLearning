@@ -35,16 +35,6 @@ function    read_slash_commands(client)
     {
         if (!interaction.isChatInputCommand())
             return;
-        // if (interaction.commandName == "test_cmd_slash")
-        //     interaction.reply(`[CHECK INFOS BOT...]\n bot_name`);
-        // else if(interaction.commandName == "add")
-        // {
-        //     const   a = interaction.options.get("a").value;
-        //     const   b = interaction.options.get("b").value;
-        //     interaction.reply(`(ADD_OP)-> Result: ${a + b}`);
-        // }
-        // else if(interaction.commandName == "sub")
-        //     interaction.reply("substract function checked.. (dev still)..");
         switch(interaction.commandName)
         {
             case "test_cmd_slash":

@@ -41,7 +41,7 @@ const   commands =
 ];
 //API REST loading
 const   rest = new REST_CLASS({version: '10'}).setToken(process.env.TOKEN);
-//async function to register all the commands  
+//async function to register all the slash commands  
 async function register_cmd()
 {
     try 

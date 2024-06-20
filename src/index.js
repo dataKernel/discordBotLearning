@@ -16,7 +16,7 @@ const   clientIntents =
 };
 
 const   client = new discord.Client(clientIntents);
-//cleint connection via token
+//client connection via token
 client.login(process.env.TOKEN);
 //checking the client is online by checking his online status
 client.on("ready", (cl) => 

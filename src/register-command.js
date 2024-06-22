@@ -2,7 +2,7 @@
 require('dotenv').config();
 //get dispord object
 const   discord = require('discord.js');
-const   REST_CLASS = discord.REST; //c'est une classe
+const   REST_CLASS = discord.REST;
 const   routes = discord.Routes;
 const   OptionTypes = discord.ApplicationCommandOptionType;
 
@@ -33,6 +33,10 @@ function    factory_operations(name, description)
 //pre-register all slash commands
 const   commands = 
 [
+    {
+        name: "embed",
+        description: "this is an embed test"
+    },
     factory_operations("add", "(?): Add two numbers."),
     factory_operations("sub", "(?): Sub two numbers."),
     factory_operations("mul", "(?): Mul two numbers."),

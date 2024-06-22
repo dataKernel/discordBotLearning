@@ -26,6 +26,7 @@ const arrayCommands =
     "!test": "je suis un test de ce qu'il y a de plus basique.. :/"
 };
 //array to manage all slash commands
+//penser a refacto avec des obj
 const arraySlashCommands = [["add", "sub", "mul", "div", "mod"], "embed"];
 
 

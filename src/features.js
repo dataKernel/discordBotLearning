@@ -14,6 +14,7 @@ function    read_commands(client, arrayCommands)
 }
 
 //function to generate all slash commands
+//important penser a refacto la fonction avec des objets pr les slash cmd
 function    read_slash_commands(client, arraySlashCommands)
 {
     client.on('interactionCreate', (interaction) => 

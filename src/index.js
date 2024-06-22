@@ -4,6 +4,7 @@ require("dotenv").config();
 const   features = require("./features.js");
 
 const   discord = require("discord.js");
+//giving to the client the different authorizations
 const   clientIntents =
 {
     intents:
@@ -14,6 +15,19 @@ const   clientIntents =
         discord.IntentsBitField.Flags.MessageContent
     ]
 };
+//associative array to manage all basics static commands
+const arrayCommands =
+{
+    "!commands": "liste de commandes:\n !alive\n!dead\n!everyone\n!info_bot\n!version\n!race",
+    "!alive": "oui tout fonctionne je suis en vie",
+    "!everyone": "@everyone Ecoutez moi c'est important.. euh en fait, j'ai oublié :/ (calixe changed)",
+    "!info_bot": `Bot_id: (en cours.. some bugs)`,
+    "!race": "Protoss are OP, Zergs are brainDead, Humans are unskilled",
+    "!test": "je suis un test de ce qu'il y a de plus basique.. :/"
+};
+//array to manage all slash commands
+const arraySlashCommands = [["add", "sub", "mul", "div", "mod"], "embed"];
+
 
 const   client = new discord.Client(clientIntents);
 //client connection via token
@@ -25,6 +39,6 @@ client.on("ready", (cl) =>
 });
 
 //reading all basic commands from array via features
-features.read_commands(client);
+features.read_commands(client, arrayCommands);
 //reading all slash commands from array via features
-features.read_slash_commands(client);
+features.read_slash_commands(client, arraySlashCommands);

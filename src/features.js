@@ -30,6 +30,7 @@ function    read_slash_commands(client, arraySlashCommands)
                 b = interaction.options.get("b").value;
             }
         }
+        
         switch(interaction.commandName)
         {
             case "add":

@@ -15,7 +15,7 @@ const   clientIntents =
         discord.IntentsBitField.Flags.MessageContent
     ]
 };
-//associative array to manage all basics static commands
+//associative array to manage all basics commands
 const arrayCommands =
 {
     "!commands": "liste de commandes:\n !alive\n!dead\n!everyone\n!info_bot\n!version\n!race",

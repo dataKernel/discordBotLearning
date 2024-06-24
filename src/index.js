@@ -25,10 +25,22 @@ const arrayCommands =
     "!race": "Protoss are OP, Zergs are brainDead, Humans are unskilled",
     "!test": "je suis un test de ce qu'il y a de plus basique.. :/"
 };
-//array to manage all slash commands
-//penser a refacto avec des obj
-const arraySlashCommands = [["add", "sub", "mul", "div", "mod"], "embed"];
 
+const arraySlashCommands =
+{
+    cacl:
+    {
+        add: function (a, b) 
+        {
+            return (features.add_op(a, b));
+        },
+        sub: function (a, b) 
+        {
+            return (features.sub_op(a, b));
+        }
+    },
+    embed: "je suis la commande embed..."
+};
 
 const   client = new discord.Client(clientIntents);
 //client connection via token

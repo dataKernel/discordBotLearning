@@ -6,7 +6,7 @@ function    add_op(a, b)
     let     str;
     
     res = a + b;
-    str = `(ADD_OP) -> Result:${res}`;
+    str = `(ADD_OP) -> Result: ${res}`;
     return(str);
 }
 //function to sub 2 numbers
@@ -37,7 +37,7 @@ function    read_commands(client, arrayCommands)
 }
 
 //function to generate args array based on interaction object
-function    get_interaction_args(interaction)
+function    get_interaction_array_args(interaction)
 {
     const   array = [];
 
@@ -48,21 +48,37 @@ function    get_interaction_args(interaction)
 }
 
 //function to generate all slash commands
-function    read_slash_commands(client, arraySlashCommands)
+function    read_slash_commands(client, ObjSlashCommands)
 {
     client.on('interactionCreate', (interaction) => 
     {   
-        const   interactionArgs = get_interaction_args(interaction);
         if (!interaction.isChatInputCommand())
             return;
-        console.log(interactionArgs);
+        //iteration trough calc associative array to get the right function
+        for (const val in ObjSlashCommands)
+        {
+            if(interaction.commandName == val)
+                interaction.reply(ObjSlashCommands[val]);
+            else if(val == 'calc')
+            {
+                for (valCalc in ObjSlashCommands.calc)
+                {
+                    if(interaction.commandName == valCalc)
+                    {
+                        const   args = get_interaction_array_args(interaction);
+                        interaction.reply(ObjSlashCommands.calc[valCalc](args[0], args[1]));
+                    }
+                }
+            }
+        }
     });
 }
 
 //functionalities export with module
 module.exports = 
 {
-    add_op, sub_op,
-    get_interaction_args,
-    read_commands, read_slash_commands,
+    add_op, 
+    sub_op,
+    read_commands, 
+    read_slash_commands
 };

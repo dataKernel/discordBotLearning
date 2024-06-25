@@ -26,11 +26,12 @@ const arrayCommands =
     "!test": "je suis un test de ce qu'il y a de plus basique.. :/"
 };
 
-const arraySlashCommands =
+const ObjSlashCommands =
 {
-    cacl:
+    embed: "je suis la command embed(test)",
+    calc:
     {
-        add: function (a, b) 
+        add: function (a, b)
         {
             return (features.add_op(a, b));
         },
@@ -39,7 +40,7 @@ const arraySlashCommands =
             return (features.sub_op(a, b));
         }
     },
-    embed: "je suis la commande embed..."
+    truc: "je suis la commande truc(test)"
 };
 
 const   client = new discord.Client(clientIntents);
@@ -54,4 +55,4 @@ client.on("ready", (cl) =>
 //reading all basic commands from array via features
 features.read_commands(client, arrayCommands);
 //reading all slash commands from array via features
-features.read_slash_commands(client, arraySlashCommands);
+features.read_slash_commands(client, ObjSlashCommands);

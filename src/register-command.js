@@ -33,15 +33,19 @@ function    factory_operations(name, description)
 //pre-register all slash commands
 const   commands = 
 [
-    {
-        name: "embed",
-        description: "this is an embed test"
-    },
     factory_operations("add", "(?): Add two numbers."),
     factory_operations("sub", "(?): Sub two numbers."),
     factory_operations("mul", "(?): Mul two numbers."),
     factory_operations("div", "(?): Div two numbers."),
-    factory_operations("mod", "(?): Mod two numbers.")
+    factory_operations("mod", "(?): Mod two numbers."),
+    {
+        name: "embed",
+        description: "this is an embed test"
+    },
+    {
+        name: "truc",
+        description: "this is a truc test"
+    }
 ];
 //API REST loading
 const   rest = new REST_CLASS({version: '10'}).setToken(process.env.TOKEN);

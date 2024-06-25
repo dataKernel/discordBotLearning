@@ -31,14 +31,11 @@ const ObjSlashCommands =
     embed: "je suis la command embed(test)",
     calc:
     {
-        add: function (a, b)
-        {
-            return (features.add_op(a, b));
-        },
-        sub: function (a, b) 
-        {
-            return (features.sub_op(a, b));
-        }
+        add: function(a, b) { return(features.add_op(a, b)) },
+        sub: function(a, b) { return(features.sub_op(a, b)) },
+        mul: function(a, b) { return(features.mul_op(a, b)) },
+        div: function(a, b) { return(features.div_op(a, b)) },
+        mod: function(a, b) { return(features.mod_op(a, b)) }
     },
     truc: "je suis la commande truc(test)"
 };

@@ -1,5 +1,5 @@
 //-------------------------- REGISTERY SLASH COMMANDS ---------------------------------
-//function to add 2 numbers
+//function to additionate 2 numbers
 function    add_op(a, b)
 {
     let     res;
@@ -9,7 +9,7 @@ function    add_op(a, b)
     str = `(ADD_OP) -> Result: ${res}`;
     return(str);
 }
-//function to sub 2 numbers
+//function to substract 2 numbers
 function    sub_op(a, b)
 {
     let     res;
@@ -17,6 +17,35 @@ function    sub_op(a, b)
 
     res = a - b;
     str = `(SUB_OP) -> Result: ${res}`;
+    return(str);
+}
+//function to multiply 2 numbers
+function    mul_op(a, b)
+{
+    let     res;
+    let     str;
+
+    res = a * b;
+    str = `(MUL_OP) -> Result: ${res}`;
+    return(str);
+}
+//function to divide 2 numbers
+function    div_op(a, b)
+{
+    let     res;
+    let     str;
+
+    res = a / b;
+    str = `(DIV_OP) -> Result: ${res}`;
+    return(str);
+}
+function    mod_op(a, b)
+{
+    let     res;
+    let     str;
+
+    res = a % b;
+    str = `(MOD_OP) -> Result: ${res}`;
     return(str);
 }
 
@@ -77,8 +106,8 @@ function    read_slash_commands(client, ObjSlashCommands)
 //functionalities export with module
 module.exports = 
 {
-    add_op, 
-    sub_op,
-    read_commands, 
-    read_slash_commands
+    //calc functions
+    add_op, sub_op, mul_op, div_op, mod_op,
+    //events command generic functions
+    read_commands, read_slash_commands
 };

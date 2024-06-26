@@ -28,7 +28,8 @@ const arrayCommands =
 
 const ObjSlashCommands =
 {
-    embed: "je suis la command embed(test)",
+    truc: "je suis la commande truc(test)",
+    embed: "je suis la commande embed(test)",
     calc:
     {
         add: function(a, b) { return(features.add_op(a, b)) },
@@ -37,7 +38,6 @@ const ObjSlashCommands =
         div: function(a, b) { return(features.div_op(a, b)) },
         mod: function(a, b) { return(features.mod_op(a, b)) }
     },
-    truc: "je suis la commande truc(test)"
 };
 
 const   client = new discord.Client(clientIntents);

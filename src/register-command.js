@@ -42,10 +42,7 @@ const   commands =
         name: "embed",
         description: "this is an embed test"
     },
-    {
-        name: "truc",
-        description: "this is a truc test"
-    }
+    //follow up cmd
 ];
 //API REST loading
 const   rest = new REST_CLASS({version: '10'}).setToken(process.env.TOKEN);

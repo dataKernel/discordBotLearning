@@ -86,9 +86,11 @@ function    read_slash_commands(client, ObjSlashCommands)
         //iteration trough calc associative array to get the right function
         for (const val in ObjSlashCommands)
         {
-            if(interaction.commandName == val)
+            if(interaction.commandName == "embeds")
+                interaction.reply({ embeds: ObjSlashCommands[val]});
+            else if(interaction.commandName == val)
                 interaction.reply(ObjSlashCommands[val]);
-            else if(val == 'calc')
+            else if(val == "calc")
             {
                 for (valCalc in ObjSlashCommands.calc)
                 {
@@ -102,7 +104,6 @@ function    read_slash_commands(client, ObjSlashCommands)
         }
     });
 }
-
 //functionalities export with module
 module.exports = 
 {

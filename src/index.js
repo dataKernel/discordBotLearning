@@ -1,9 +1,9 @@
+//------------------ CONFIG ---------------------------
 //get env variables
 require("dotenv").config();
+const   discord = require("discord.js");
 //get fundamental features
 const   features = require("./features.js");
-
-const   discord = require("discord.js");
 //giving to the client the different authorizations
 const   clientIntents =
 {
@@ -15,6 +15,13 @@ const   clientIntents =
         discord.IntentsBitField.Flags.MessageContent
     ]
 };
+//----------------- END_CONDIFG ----------------------
+
+//----------------- DEFINITIONS ---------------------
+//embed object definition
+const   embed = new discord.EmbedBuilder()
+.setTitle("Embed title")
+.setDescription("Emebed description(...).");
 //associative array to manage all basics commands
 const arrayCommands =
 {
@@ -26,19 +33,20 @@ const arrayCommands =
     "!test": "je suis un test de ce qu'il y a de plus basique.. :/"
 };
 
+//slash command object to define all the slash commands by category
 const ObjSlashCommands =
 {
-    truc: "je suis la commande truc(test)",
-    embed: "je suis la commande embed(test)",
+    embeds: [embed],//embed needs an array of objects
     calc:
     {
-        add: function(a, b) { return(features.add_op(a, b)) },
-        sub: function(a, b) { return(features.sub_op(a, b)) },
-        mul: function(a, b) { return(features.mul_op(a, b)) },
-        div: function(a, b) { return(features.div_op(a, b)) },
-        mod: function(a, b) { return(features.mod_op(a, b)) }
+        add: function (a, b) { return (features.add_op(a, b)) },
+        sub: function (a, b) { return (features.sub_op(a, b)) },
+        mul: function (a, b) { return (features.mul_op(a, b)) },
+        div: function (a, b) { return (features.div_op(a, b)) },
+        mod: function (a, b) { return (features.mod_op(a, b)) }
     },
 };
+//-------------------- END_DEFINITIONS --------------------------
 
 const   client = new discord.Client(clientIntents);
 //client connection via token
@@ -48,6 +56,7 @@ client.on("ready", (cl) =>
 {
     console.log(`✅ ${cl.user.tag} is online`);
 });
+
 
 //reading all basic commands from array via features
 features.read_commands(client, arrayCommands);

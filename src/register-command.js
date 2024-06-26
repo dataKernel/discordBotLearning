@@ -39,7 +39,7 @@ const   commands =
     factory_operations("div", "(?): Div two numbers."),
     factory_operations("mod", "(?): Mod two numbers."),
     {
-        name: "embed",
+        name: "embeds",
         description: "this is an embed test"
     },
     //follow up cmd

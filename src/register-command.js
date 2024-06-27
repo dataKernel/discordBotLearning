@@ -49,6 +49,10 @@ const   commands =
     {
         name: "embed_pink",
         description: "this is a pink embed"
+    },
+    {
+        name: "embed_basis",
+        description: "this is a basic embed"
     }
     //follow up cmd
 ];

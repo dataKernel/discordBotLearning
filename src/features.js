@@ -83,15 +83,14 @@ function    read_slash_commands(client, ObjSlashCommands)
     {   
         if (!interaction.isChatInputCommand())
             return;
-        //iteration trough calc associative array to get the right function
+        //generic object iteration
         for (const val in ObjSlashCommands)
         {
-            if(interaction.commandName == "embeds")
-                interaction.reply({ embeds: ObjSlashCommands[val]});
-            else if(interaction.commandName == val)
-                interaction.reply(ObjSlashCommands[val]);
+            if(val == "embeds" && interaction.commandName == val)
+                interaction.reply({ embeds: ObjSlashCommands[val] })   
             else if(val == "calc")
             {
+                //iteration trough calc associative array to get the right function
                 for (valCalc in ObjSlashCommands.calc)
                 {
                     if(interaction.commandName == valCalc)

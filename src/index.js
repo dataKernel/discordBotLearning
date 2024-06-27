@@ -36,15 +36,17 @@ const arrayCommands =
 //slash command object to define all the slash commands by category
 const ObjSlashCommands =
 {
+    //members
     embeds: [embed],//embed needs an array of objects
+    //methods
     calc:
     {
         add: function (a, b) { return (features.add_op(a, b)) },
         sub: function (a, b) { return (features.sub_op(a, b)) },
         mul: function (a, b) { return (features.mul_op(a, b)) },
         div: function (a, b) { return (features.div_op(a, b)) },
-        mod: function (a, b) { return (features.mod_op(a, b)) }
-    },
+        mod: function (a, b) { return (features.mod_op(a, b)) },
+    }
 };
 //-------------------- END_DEFINITIONS --------------------------
 

@@ -87,7 +87,7 @@ function    read_slash_commands(client, ObjSlashCommands)
         for (const val in ObjSlashCommands)
         {
             if(val == "embeds" && interaction.commandName == val)
-                interaction.reply({ embeds: ObjSlashCommands[val] })   
+                interaction.reply(ObjSlashCommands[val]); 
             else if(val == "calc")
             {
                 //iteration trough calc associative array to get the right function

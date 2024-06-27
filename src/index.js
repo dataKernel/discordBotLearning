@@ -20,8 +20,9 @@ const   clientIntents =
 //----------------- DEFINITIONS ---------------------
 //embed object definition
 const   embed = new discord.EmbedBuilder()
-.setTitle("Embed title")
-.setDescription("Emebed description(...).");
+.setTitle("d.title")
+.setDescription("d.desc(...)");
+const   embeds = {embeds: [embed]};
 //associative array to manage all basics commands
 const arrayCommands =
 {
@@ -37,7 +38,7 @@ const arrayCommands =
 const ObjSlashCommands =
 {
     //members
-    embeds: [embed],//embed needs an array of objects
+    embeds,
     //methods
     calc:
     {

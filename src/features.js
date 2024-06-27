@@ -86,12 +86,15 @@ function    read_slash_commands(client, ObjSlashCommands)
         //generic object iteration
         for (const val in ObjSlashCommands)
         {
-            if(val == "embeds" && interaction.commandName == val)
-                interaction.reply(ObjSlashCommands[val]); 
+            if(val == "embedArray")
+            {
+                interaction.reply({embeds: [ObjSlashCommands.embedArray.embed_pinky]});
+                return;
+            }
             else if(val == "calc")
             {
                 //iteration trough calc associative array to get the right function
-                for (valCalc in ObjSlashCommands.calc)
+                for (const valCalc in ObjSlashCommands.calc)
                 {
                     if(interaction.commandName == valCalc)
                     {

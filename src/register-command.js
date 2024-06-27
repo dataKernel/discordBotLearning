@@ -39,9 +39,17 @@ const   commands =
     factory_operations("div", "(?): Div two numbers."),
     factory_operations("mod", "(?): Mod two numbers."),
     {
-        name: "embeds",
-        description: "this is an embed test"
+        name: "embed_white",
+        description: "this is a white embed"
     },
+    {
+        name: "embed_black",
+        description: "this is a black embed"
+    },
+    {
+        name: "embed_pink",
+        description: "this is a pink embed"
+    }
     //follow up cmd
 ];
 //API REST loading

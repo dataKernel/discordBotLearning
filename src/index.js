@@ -18,28 +18,38 @@ const   clientIntents =
 //----------------- END_CONDIFG ----------------------
 
 //----------------- DEFINITIONS ---------------------
-//embed object definition
-const   embed = new discord.EmbedBuilder()
-.setTitle("d.title")
-.setDescription("d.desc(...)");
-const   embeds = {embeds: [embed]};
-//associative array to manage all basics commands
 const arrayCommands =
 {
     "!commands": "liste de commandes:\n !alive\n!dead\n!everyone\n!info_bot\n!version\n!race",
     "!alive": "oui tout fonctionne je suis en vie",
     "!everyone": "@everyone Ecoutez moi c'est important.. euh en fait, j'ai oublié :/ (calixe changed)",
-    "!info_bot": `Bot_id: (en cours.. some bugs)`,
     "!race": "Protoss are OP, Zergs are brainDead, Humans are unskilled",
-    "!test": "je suis un test de ce qu'il y a de plus basique.. :/"
+    "!test": "Je suis un test..."
 };
+//embed object definition
+const   embed_white = new discord.EmbedBuilder()
+    .setTitle("---EMBED_WHITE_v1.0---")
+    .setDescription("Je suis blanc. Je suis blanc. Je suis blanc. Je suis blanc.")
+    .setColor(0xFFFFFF);
+const   embed_black = new discord.EmbedBuilder()
+    .setTitle("---EMBED_BLACK-v1.0---")
+    .setDescription("Je suis noir. Je suis noir. Je suis noir. Je suis noir. ")
+    .setColor(0x000000);
+const   embed_pinky = new discord.EmbedBuilder()
+    .setTitle("---EMBED_PINKY_v1.0")
+    .setTitle("Je suis rose. Je suis rose. Je suis rose. Je suis rose. Je suis rose. ")
+    .setColor(0xFC0C0F);
+//embeds array
+const   embedArray = {embed_white, embed_black, embed_pinky};
+//associative array to manage all basics commands
 
 //slash command object to define all the slash commands by category
 const ObjSlashCommands =
 {
-    //members
-    embeds,
-    //methods
+    //--------- MEMBERS -----------
+    embedArray,
+    //--------- METHODS ------------
+    //methods calc
     calc:
     {
         add: function (a, b) { return (features.add_op(a, b)) },

@@ -27,23 +27,29 @@ const arrayCommands =
     "!test": "Je suis un test..."
 };
 //embed object definition
-const   embed_white = new discord.EmbedBuilder()
-    .setTitle("---EMBED_WHITE_v1.0---")
+const   embedWhite = new discord.EmbedBuilder()
+    .setTitle("--- EMBED_WHITE_v1.0 ---")
     .setDescription("Je suis blanc. Je suis blanc. Je suis blanc. Je suis blanc.")
     .setColor(0xFFFFFF);
-const   embed_black = new discord.EmbedBuilder()
-    .setTitle("---EMBED_BLACK-v1.0---")
+const   embedBlack = new discord.EmbedBuilder()
+    .setTitle("--- EMBED_BLACK_v1.0 ---")
     .setDescription("Je suis noir. Je suis noir. Je suis noir. Je suis noir. ")
     .setColor(0x000000);
-const   embed_pinky = new discord.EmbedBuilder()
-    .setTitle("---EMBED_PINKY_v1.0")
+const   embedPink = new discord.EmbedBuilder()
+    .setTitle("--- EMBED_PINKY_v1.0 ---")
     .setDescription("Je suis rose. Je suis rose. Je suis rose. Je suis rose. Je suis rose. ")
     .setColor(0xFF33F3);
-const   embed_basic = new discord.EmbedBuilder()
-    .setTitle("---Fiora est une belle femme, mécanique, skins S tiers, mécaniques flows SSS :)")
+const   embedBasic = new discord.EmbedBuilder()
+    .setTitle("[Fiora est une belle femme, mécanique, skins S tiers, mécaniques flows SSS :)]")
     .setColor(0x33FF5B);
 //embeds array
-const   embedArray = {embed_white, embed_black, embed_pinky};
+const   embedArray = 
+{
+    embed_white: embedWhite,
+    embed_black: embedBlack, 
+    embed_pink: embedPink,
+    embed_basic: embedBasic
+};
 //associative array to manage all basics commands
 
 //slash command object to define all the slash commands by category

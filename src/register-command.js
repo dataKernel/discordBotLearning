@@ -33,11 +33,13 @@ function    factory_operations(name, description)
 //pre-register all slash commands
 const   commands = 
 [
+    //calculator commands
     factory_operations("add", "(?): Add two numbers."),
     factory_operations("sub", "(?): Sub two numbers."),
     factory_operations("mul", "(?): Mul two numbers."),
     factory_operations("div", "(?): Div two numbers."),
     factory_operations("mod", "(?): Mod two numbers."),
+    //embed commands
     {
         name: "embed_white",
         description: "this is a white embed"
@@ -51,7 +53,7 @@ const   commands =
         description: "this is a pink embed"
     },
     {
-        name: "embed_basis",
+        name: "embed_basic",
         description: "this is a basic embed"
     }
     //follow up cmd

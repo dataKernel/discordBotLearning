@@ -88,7 +88,7 @@ function    read_slash_commands(client, ObjSlashCommands)
         {
             if(val == "embedArray")
             {
-                interaction.reply({embeds: [ObjSlashCommands.embedArray.embed_pinky]});
+                interaction.reply(".");
                 return;
             }
             else if(val == "calc")

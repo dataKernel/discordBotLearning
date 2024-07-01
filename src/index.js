@@ -24,7 +24,8 @@ const arrayCommands =
     "!alive": "oui tout fonctionne je suis en vie",
     "!everyone": "@everyone Ecoutez moi c'est important.. euh en fait, j'ai oublié :/ (calixe changed)",
     "!race": "Protoss are OP, Zergs are brainDead, Humans are unskilled",
-    "!test": "Je suis un test..."
+    "!test": "Je suis un test...",
+    "!channel": "Je suis un test de reply de channel et non de user (no tag).."
 };
 //embed object definition
 const   embedWhite = new discord.EmbedBuilder()

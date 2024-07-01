@@ -59,7 +59,9 @@ function    read_commands(client, arrayCommands)
             return;
         for (const key in arrayCommands) 
         {
-            if (msg.content == key)
+            if(msg.content == key && key == "!channel")
+                msg.channel.send(arrayCommands[key]);
+            else if(msg.content == key)
                 msg.reply(arrayCommands[key]);
         }
     });

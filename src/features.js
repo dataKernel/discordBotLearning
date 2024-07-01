@@ -106,6 +106,7 @@ function    read_slash_commands(client, ObjSlashCommands)
                 {
                     if(interaction.commandName == valCalc)
                     {
+                        //truc
                         const   args = get_interaction_array_args(interaction);
                         interaction.reply(ObjSlashCommands.calc[valCalc](args[0], args[1]));
                         return;

@@ -40,9 +40,14 @@ const   embedPink = new discord.EmbedBuilder()
     .setDescription("Je suis rose. Je suis rose. Je suis rose. Je suis rose. Je suis rose. ")
     .addFields(
     { 
-        name: "Je suis un titre_field rose", 
-        value: "Je suis une valeur_field rose", 
+        name: "Intro", 
+        value: "Je suis une valeur_field rose qui flash bien sa race", 
         inline: true 
+    },
+    {
+        name: "Desc",
+        value: "Je suis une desc_field rose qui flash aussi mais bon, plus boring quoi..",
+        inline: true
     })
     .setColor(0xFF33F3);
 const   embedBasic = new discord.EmbedBuilder()

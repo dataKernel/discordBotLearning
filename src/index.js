@@ -38,9 +38,15 @@ const   embedBlack = new discord.EmbedBuilder()
 const   embedPink = new discord.EmbedBuilder()
     .setTitle("--- EMBED_PINKY_v1.0 ---")
     .setDescription("Je suis rose. Je suis rose. Je suis rose. Je suis rose. Je suis rose. ")
+    .addFields(
+    { 
+        name: "Je suis un titre_field rose", 
+        value: "Je suis une valeur_field rose", 
+        inline: true 
+    })
     .setColor(0xFF33F3);
 const   embedBasic = new discord.EmbedBuilder()
-    .setTitle("[Fiora est une belle femme, mécanique, skins S tiers, mécaniques flows SSS :)]")
+    .setTitle("[Just un embed basic fait en JS...]")
     .setColor(0x33FF5B);
 //embeds array
 const   embedArray = 

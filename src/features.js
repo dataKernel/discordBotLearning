@@ -88,8 +88,14 @@ function    read_slash_commands(client, ObjSlashCommands)
         {
             if(val == "embedArray")
             {
-                interaction.reply(".");
-                return;
+                for(const valEmbed in ObjSlashCommands.embedArray)
+                {
+                    if(interaction.commandName == valEmbed)
+                    {
+                        interaction.reply({embeds: [ObjSlashCommands.embedArray[valEmbed]]});
+                        return;        
+                   }
+                }
             }
             else if(val == "calc")
             {
@@ -100,6 +106,7 @@ function    read_slash_commands(client, ObjSlashCommands)
                     {
                         const   args = get_interaction_array_args(interaction);
                         interaction.reply(ObjSlashCommands.calc[valCalc](args[0], args[1]));
+                        return;
                     }
                 }
             }

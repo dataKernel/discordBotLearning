@@ -69,9 +69,8 @@ function    read_commands(client, arrayCommands)
 
 //function to generate args array based on interaction object
 function    get_interaction_array_args(interaction)
-{master
-    const   array = [];
-
+{
+    const   array = new Array();
     array[0] = interaction.options.get("a").value;
     array[1] = interaction.options.get("b").value;
 

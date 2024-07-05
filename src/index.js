@@ -86,7 +86,7 @@ const   client = new discord.Client(clientIntents);
 //client connection via token
 client.login(process.env.TOKEN);
 //checking the client is online by checking his online status
-client.on("ready", (cl) => 
+client.on('ready', (cl) => 
 {
     console.log(`✅ ${cl.user.tag} is online`);
 });

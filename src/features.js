@@ -52,7 +52,7 @@ function    mod_op(a, b)
 //function to generate all basic commands
 function    read_commands(client, arrayCommands)
 {
-    client.on("messageCreate", (msg) => 
+    client.on('messageCreate', (msg) => 
     {
         //secure that the bot doesn't reply to himeself recursively
         if (msg.author.bot)
@@ -114,6 +114,41 @@ function    read_slash_commands(client, ObjSlashCommands)
         }
     });
 }
+
+//function to remove/add roles to an user
+function    manage_roles()
+{
+    //define the roles we want to manage
+    const   roles =
+    [
+        {
+            id: "1258890977796685964",
+            label: "DEBUTANT"
+        },
+        {
+            id: "1258891284517621953",
+            label: "INTERMEDIAIRE"
+        },
+        {
+            id: "1258891366730043412",
+            label: "EXPERT"
+        }
+    ];
+
+    client.on('ready', async (client) => 
+    {
+        //try-catch testing
+        try 
+        {
+            const   channel = await client.channels.cache.get("")
+        }
+        catch (error) 
+        {
+            console.log(error);
+        }
+    });
+}
+
 //functionalities export with module
 module.exports = 
 {

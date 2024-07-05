@@ -15,13 +15,13 @@ function    factory_operations(name, description)
         description: description,
         options: [
             {
-                name: "a",
+                name: 'a',
                 description: "the first number",
                 type: OptionTypes.Number,
                 required: true
             },
             {
-                name: "b",
+                name: 'b',
                 description: "the second number",
                 type: OptionTypes.Number,
                 required: true

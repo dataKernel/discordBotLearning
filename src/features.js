@@ -1,4 +1,7 @@
 //-------------------------- REGISTERY SLASH COMMANDS ---------------------------------
+
+const { ActionRowBuilder, ButtonBuilder, ButtonStyle } = require("discord.js");
+
 //function to additionate 2 numbers
 function    add_op(a, b)
 {
@@ -93,7 +96,10 @@ function    read_slash_commands(client, ObjSlashCommands)
                 {
                     if(interaction.commandName == valEmbed)
                     {
-                        interaction.reply({embeds: [ObjSlashCommands.embedArray[valEmbed]]});
+                        interaction.reply(
+                        {
+                            embeds: [ObjSlashCommands.embedArray[valEmbed]]
+                        });
                         return;        
                    }
                 }
@@ -115,22 +121,22 @@ function    read_slash_commands(client, ObjSlashCommands)
     });
 }
 
-//function to remove/add roles to an user
-function    manage_roles()
+//function to launch basic buttons representing specific roles
+function    launch_roles(client)
 {
     //define the roles we want to manage
     const   roles =
     [
         {
-            id: "1258890977796685964",
+            id: '1258890977796685964',
             label: "DEBUTANT"
         },
         {
-            id: "1258891284517621953",
+            id: '1258891284517621953',
             label: "INTERMEDIAIRE"
         },
         {
-            id: "1258891366730043412",
+            id: '1258891366730043412',
             label: "EXPERT"
         }
     ];
@@ -140,7 +146,27 @@ function    manage_roles()
         //try-catch testing
         try 
         {
-            const   channel = await client.channels.cache.get("")
+            const   channel = await client.channels.cache.get('1231888195373891676')
+            if(!channel) return; //check if the channel is valid
+            const   row = new ActionRowBuilder();
+
+            for(const val of roles)
+            {
+                const   buttonBuilder = new ButtonBuilder();
+                
+                row.components
+                .push(buttonBuilder.setCustomId(val.id).setLabel(val.label))
+                if(val.label == "DEBUTANT")
+                    buttonBuilder.setStyle(ButtonStyle.Primary);
+                else if(val.label == "INTERMEDIAIRE")
+                    buttonBuilder.setStyle(ButtonStyle.Secondary);
+                else if(val.label == "EXPERT")
+                    buttonBuilder.setStyle(ButtonStyle.Danger);
+            }
+            channel.send({
+                content: "ADD or REMOVE a role below.",
+                components: [row]
+            });
         }
         catch (error) 
         {
@@ -155,5 +181,7 @@ module.exports =
     //calc functions
     add_op, sub_op, mul_op, div_op, mod_op,
     //events command generic functions
-    read_commands, read_slash_commands
+    read_commands, read_slash_commands,
+    //roles management via button in channel
+    launch_roles
 };

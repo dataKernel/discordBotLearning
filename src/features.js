@@ -69,9 +69,7 @@ function    read_commands(client, arrayCommands)
 
 //function to generate args array based on interaction object
 function    get_interaction_array_args(interaction)
-{
-    const   array2 = [1, 2, 3]; // test
-    console.log(array2);
+{master
     const   array = [];
 
     array[0] = interaction.options.get("a").value;
@@ -108,7 +106,6 @@ function    read_slash_commands(client, ObjSlashCommands)
                 {
                     if(interaction.commandName == valCalc)
                     {
-                        //truc
                         const   args = get_interaction_array_args(interaction);
                         interaction.reply(ObjSlashCommands.calc[valCalc](args[0], args[1]));
                         return;

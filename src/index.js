@@ -91,8 +91,9 @@ client.on('ready', (cl) =>
     console.log(`✅ ${cl.user.tag} is online`);
 });
 
-
 //reading all basic commands from array via features
 features.read_commands(client, arrayCommands);
 //reading all slash commands from array via features
 features.read_slash_commands(client, ObjSlashCommands);
+//adding or removing specific roles provided with button interaction
+features.launch_roles(client);

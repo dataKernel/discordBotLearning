@@ -141,6 +141,24 @@ function    launch_roles(client)
         }
     ];
 
+    function launch_roles(client) {
+        //define the roles we want to manage
+        const roles =
+            [
+                {
+                    id: '1258890977796685964',
+                    label: "DEBUTANT"
+                },
+                {
+                    id: '1258891284517621953',
+                    label: "INTERMEDIAIRE"
+                },
+                {
+                    id: '1258891366730043412',
+                    label: "EXPERT"
+                }
+            ];
+
     client.on('ready', async (client) => 
     {
         //try-catch testing

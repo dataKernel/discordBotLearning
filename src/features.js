@@ -156,9 +156,9 @@ function    launch_roles(client)
                 row.components
                 .push(buttonBuilder.setCustomId(val.id).setLabel(val.label))
                 if(val.label == "DEBUTANT")
-                    buttonBuilder.setStyle(discord.ButtonStyle.Primary);
+                    buttonBuilder.setStyle(discord.ButtonStyle.Success);
                 else if(val.label == "INTERMEDIAIRE")
-                    buttonBuilder.setStyle(discord.ButtonStyle.Secondary);
+                    buttonBuilder.setStyle(discord.ButtonStyle.Primary);
                 else if(val.label == "EXPERT")
                     buttonBuilder.setStyle(discord.ButtonStyle.Danger);
             }

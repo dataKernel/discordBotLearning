@@ -68,16 +68,17 @@ const   embedArray =
 const ObjSlashCommands =
 {
     //--------- MEMBERS -----------
-    embedArray,
+    embedArray, 
     //--------- METHODS ------------
     //methods calc
+    //roles: function() { return(featues.launch_roles(client)) },    
     calc:
     {
-        add: function (a, b) { return (features.add_op(a, b)) },
-        sub: function (a, b) { return (features.sub_op(a, b)) },
-        mul: function (a, b) { return (features.mul_op(a, b)) },
-        div: function (a, b) { return (features.div_op(a, b)) },
-        mod: function (a, b) { return (features.mod_op(a, b)) },
+        add: function (a, b) { return(features.add_op(a, b)) },
+        sub: function (a, b) { return(features.sub_op(a, b)) },
+        mul: function (a, b) { return(features.mul_op(a, b)) },
+        div: function (a, b) { return(features.div_op(a, b)) },
+        mod: function (a, b) { return(features.mod_op(a, b)) },
     }
 };
 //-------------------- END_DEFINITIONS --------------------------

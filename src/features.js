@@ -1,6 +1,5 @@
 //-------------------------- REGISTERY SLASH COMMANDS ---------------------------------
-
-const { ActionRowBuilder, ButtonBuilder, ButtonStyle } = require("discord.js");
+const   discord = require("discord.js");
 
 //function to additionate 2 numbers
 function    add_op(a, b)
@@ -141,24 +140,6 @@ function    launch_roles(client)
         }
     ];
 
-    function launch_roles(client) {
-        //define the roles we want to manage
-        const roles =
-            [
-                {
-                    id: '1258890977796685964',
-                    label: "DEBUTANT"
-                },
-                {
-                    id: '1258891284517621953',
-                    label: "INTERMEDIAIRE"
-                },
-                {
-                    id: '1258891366730043412',
-                    label: "EXPERT"
-                }
-            ];
-
     client.on('ready', async (client) => 
     {
         //try-catch testing
@@ -166,20 +147,20 @@ function    launch_roles(client)
         {
             const   channel = await client.channels.cache.get('1231888195373891676')
             if(!channel) return; //check if the channel is valid
-            const   row = new ActionRowBuilder();
+            const   row = new discord.ActionRowBuilder();
 
             for(const val of roles)
             {
-                const   buttonBuilder = new ButtonBuilder();
+                const   buttonBuilder = new discord.ButtonBuilder();
                 
                 row.components
                 .push(buttonBuilder.setCustomId(val.id).setLabel(val.label))
                 if(val.label == "DEBUTANT")
-                    buttonBuilder.setStyle(ButtonStyle.Primary);
+                    buttonBuilder.setStyle(discord.ButtonStyle.Primary);
                 else if(val.label == "INTERMEDIAIRE")
-                    buttonBuilder.setStyle(ButtonStyle.Secondary);
+                    buttonBuilder.setStyle(discord.ButtonStyle.Secondary);
                 else if(val.label == "EXPERT")
-                    buttonBuilder.setStyle(ButtonStyle.Danger);
+                    buttonBuilder.setStyle(discord.ButtonStyle.Danger);
             }
             channel.send({
                 content: "ADD or REMOVE a role below.",

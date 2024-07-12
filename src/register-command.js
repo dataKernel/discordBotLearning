@@ -55,8 +55,12 @@ const   commands =
     {
         name: "embed_basic",
         description: "this is a basic embed"
+    },
+    //roles command
+    {
+        name: "roles",
+        description: "adding specific roles to users"
     }
-    //follow up cmd
 ];
 //API REST loading
 const   rest = new REST_CLASS({version: '10'}).setToken(process.env.TOKEN);

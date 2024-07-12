@@ -116,30 +116,19 @@ function    read_slash_commands(client, ObjSlashCommands)
                     }
                 }
             }
+            else if(val == "roles")
+            {
+                interaction.reply(`check_client_bug: ${client.user.tag}`);
+                ObjSlashCommands.roles(client, ObjSlashCommands.rolesArray);
+            }
         }
     });
 }
 
 //function to launch basic buttons representing specific roles
-function    launch_roles(client)
+function    launch_roles(client, rolesArray)
 {
-    //define the roles we want to manage
-    const   roles =
-    [
-        {
-            id: '1258890977796685964',
-            label: "DEBUTANT"
-        },
-        {
-            id: '1258891284517621953',
-            label: "INTERMEDIAIRE"
-        },
-        {
-            id: '1258891366730043412',
-            label: "EXPERT"
-        }
-    ];
-
+    console.log(client.user.tag);
     client.on('ready', async (client) => 
     {
         //try-catch testing
@@ -149,7 +138,7 @@ function    launch_roles(client)
             if(!channel) return; //check if the channel is valid
             const   row = new discord.ActionRowBuilder();
 
-            for(const val of roles)
+            for(const val of rolesArray)
             {
                 const   buttonBuilder = new discord.ButtonBuilder();
                 

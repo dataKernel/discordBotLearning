@@ -116,11 +116,6 @@ function    read_slash_commands(client, ObjSlashCommands)
                     }
                 }
             }
-            else if(val == "roles")
-            {
-                interaction.reply(`check_client_bug: ${client.user.tag}`);
-                ObjSlashCommands.roles(client, ObjSlashCommands.rolesArray);
-            }
         }
     });
 }
@@ -128,7 +123,6 @@ function    read_slash_commands(client, ObjSlashCommands)
 //function to launch basic buttons representing specific roles
 function    launch_roles(client, rolesArray)
 {
-    console.log(client.user.tag);
     client.on('ready', async (client) => 
     {
         //try-catch testing

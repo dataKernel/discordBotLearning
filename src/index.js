@@ -98,7 +98,6 @@ const ObjSlashCommands =
         div: function (a, b) { return (features.div_op(a, b)) },
         mod: function (a, b) { return (features.mod_op(a, b)) },
     },
-    roles: function(client, rolesArray) { return(features.launch_roles(client, rolesArray)) }
 }; 
 //-------------------- END_DEFINITIONS --------------------------
 
@@ -112,3 +111,4 @@ client.on('ready', (cl) =>
 features.read_commands(client, arrayCommands);
 //reading all slash commands from array via features
 features.read_slash_commands(client, ObjSlashCommands);
+features.launch_roles(client, rolesArray);

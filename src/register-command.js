@@ -55,11 +55,6 @@ const   commands =
     {
         name: "embed_basic",
         description: "this is a basic embed"
-    },
-    //roles command
-    {
-        name: "roles",
-        description: "adding specific roles to users"
     }
 ];
 //API REST loading

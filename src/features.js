@@ -82,40 +82,68 @@ function    get_interaction_array_args(interaction)
 //function to generate all slash commands
 function    read_slash_commands(client, ObjSlashCommands)
 {
-    client.on('interactionCreate', (interaction) => 
+    client.on('interactionCreate', async (interaction) => 
     {   
-        if (!interaction.isChatInputCommand())
-            return;
-        //generic object iteration
-        for (const val in ObjSlashCommands)
+        //checking the interaction is slash command type
+        if (interaction.isChatInputCommand())
         {
-            if(val == "embedArray")
+            //generic object iteration
+            for (const val in ObjSlashCommands)
             {
-                for(const valEmbed in ObjSlashCommands.embedArray)
+                if(val == "embedArray")
                 {
-                    if(interaction.commandName == valEmbed)
+                    for(const valEmbed in ObjSlashCommands.embedArray)
                     {
-                        interaction.reply(
+                        if(interaction.commandName == valEmbed)
                         {
-                            embeds: [ObjSlashCommands.embedArray[valEmbed]]
-                        });
-                        return;        
-                   }
+                            interaction.reply(
+                            {
+                                embeds: [ObjSlashCommands.embedArray[valEmbed]]
+                            });
+                            return;        
+                       }
+                    }
                 }
-            }
-            else if(val == "calc")
-            {
-                //iteration trough calc associative array to get the right function
-                for (const valCalc in ObjSlashCommands.calc)
+                else if(val == "calc")
                 {
-                    if(interaction.commandName == valCalc)
+                    //iteration trough calc associative array to get the right function
+                    for (const valCalc in ObjSlashCommands.calc)
                     {
-                        const   args = get_interaction_array_args(interaction);
-                        interaction.reply(ObjSlashCommands.calc[valCalc](args[0], args[1]));
-                        return;
+                        if(interaction.commandName == valCalc)
+                        {
+                            const   args = get_interaction_array_args(interaction);
+                            interaction.reply(ObjSlashCommands.calc[valCalc](args[0], args[1]));
+                            return;
+                        }
                     }
                 }
             }
+        }
+        //checking the interaction is button type
+        else if(interaction.isButton())
+        {
+            try 
+            {
+                await interaction.deferReply({ ephemeral: true });
+                const role = interaction.guild.roles.cache.get(interaction.customId);
+                if (!role) {
+                    interaction.editReply({ content: "I couldn't find that role" });
+                    return;
+                }
+                const hasRole = interaction.member.roles.cache.has(role.id);
+
+                if (hasRole) {
+                    await interaction.member.roles.remove(role);
+                    await interaction.editReply(`The role ${role} has been removed..`);
+                    return;
+                }
+                await interaction.editReply(`The role ${role} has been added..`);
+                await interaction.member.roles.add(role);
+            }    
+            catch (error)
+            {
+                console.log(error);   
+            }   
         }
     });
 }
@@ -129,7 +157,7 @@ function    launch_roles(client, rolesArray)
         try 
         {
             const   channel = await client.channels.cache.get('1231888195373891676')
-            if(!channel) return; //check if the channel is valid
+            if(!channel) return; //check if the channel is valid otherwise we finish the event
             const   row = new discord.ActionRowBuilder();
 
             for(const val of rolesArray)
